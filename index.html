@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Pembuatan aplikasi Penjualan program JAVA CLI(Command Line Interface)</h1>
+	<h4>Nama   : Irvan al rasyid</h4>
+	<h4>Npm    : 10822130</h4>
+	<h4>Kelas  : LJT-22/204</h4>
+	<h4>Matkul : pemrograman Berorientasi Object /Java</h4>
+	<h3>Program</h3>
+	<textarea>
+package com.penjualan;
+
+import java.util.Scanner;
+import java.text.NumberFormat;
+import java.io.IOException;
+
+public class Main{
+    public static void main(String[] args) throws IOException, InterruptedException{
+        clearScreen();
+        Scanner hasil = new Scanner(System.in);
+        String ulang;
+        String ulang2;
+        String judul = "";
+        String judul2 = "";
+        String totalFormatted = "";
+        int pilihan;
+        int pilihan2;
+        int pilihan3;
+        int jumlahbrng = 0;
+        int jumlahbrng2 = 0;
+        int total = 0;
+        int total2 = 0;
+        int jumlah = 0;
+
+        do{ 
+            clearScreen();
+            System.out.println("===================================");
+            System.out.println("Silahkan pilih menu di bawah ini ! \n" +
+                                "1. Chiken nuggets So good \n" + 
+                                "2. Otak otak Fiesta \n" + 
+                                "3. Bakso Indofood \n" +
+                                "=================================== \n"+
+                                "Jika anda menekan 2 kali angka yang sama : \n" + 
+                                "11 = Chicken nuggets So good Premium \n" +
+                                "22 = Otak otak Fiesta Premium \n" + 
+                                "33 = Bakso indofood Premium \n" + 
+                                "=================================== \n");
+            System.out.print("Masukan pilihan anda, Maksimal pesanan sebanyak 2 :");
+            while(!hasil.hasNextInt()) {
+                System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                hasil.next();
+            }
+            pilihan = hasil.nextInt();
+            if(pilihan == 1) {
+                do{ 
+                clearScreen();
+                System.out.println("Anda memilih Chicken nuggets So good");
+                judul = "Chicken nuggets So good";
+                System.out.println("Pilih varian ukuran : \n" + 
+                                    "1. Besar Rp 30.000 \n" + 
+                                    "2. Sedang Rp 25.000 \n" + 
+                                    "3. Kecil Rp 20.000 \n");
+                System.out.print("Masukan pilihan Ukuran anda : ");
+                while(!hasil.hasNextInt()) {
+                    System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                    hasil.next();
+                }
+                pilihan2 = hasil.nextInt();
+
+  
+                if(pilihan2 == 1) {
+                    System.out.println("Pilihan anda adalah ukuran Besar");
+
+                    System.out.print("Masukan jumlah Pesanan Anda! :");
+                    pilihan3 = hasil.nextInt();
+                    jumlahbrng = pilihan3;
+                    total = pilihan3 * 30000;
+                    NumberFormat nf = NumberFormat.getNumberInstance();
+                    totalFormatted = nf.format(total);
+                    System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                }else if(pilihan2 == 2) {
+                    System.out.println("Pilihan anda adalah ukuran Sedang");
+
+                    System.out.print("Masukan jumlah Pesanan Anda! :");
+                    pilihan3 = hasil.nextInt();
+                    jumlahbrng = pilihan3;
+                    total = pilihan3 * 25000;
+                    NumberFormat nf = NumberFormat.getNumberInstance();
+                    totalFormatted = nf.format(total);
+                    System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                }else if(pilihan2 == 3) {
+                    System.out.println("Pilihan anda adalah ukuran Kecil");
+
+                    System.out.print("Masukan jumlah Pesanan Anda! :");
+                    pilihan3 = hasil.nextInt();
+                    jumlahbrng = pilihan3;
+                    total = pilihan3 * 20000;
+                    NumberFormat nf = NumberFormat.getNumberInstance();
+                    totalFormatted = nf.format(total);
+                    System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                }else{
+                    System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                }
+
+                System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                ulang2 = hasil.next();
+            } while(ulang2.equalsIgnoreCase("y"));
+            
+            }else if(pilihan == 2) {
+                do{ 
+                    clearScreen();
+                    System.out.println("Anda memilih Otak-otak fiesta");
+                    judul = "Otak-otak fiesta";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 25.000 \n" + 
+                                        "2. Sedang Rp 20.000 \n" + 
+                                        "3. Kecil Rp 18.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+      
+                        if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 25000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 20000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 18000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+            }else if(pilihan == 3) {
+                do{ 
+                    clearScreen();
+                    System.out.println("Anda memilih Bakso indofood");
+                    judul = "Bakso indofood";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 20.000 \n" + 
+                                        "2. Sedang Rp 15.000 \n" + 
+                                        "3. Kecil Rp 10.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+      
+                        if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 20000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 15000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 10000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+            }else if(pilihan == 11) {
+                do{ 
+                    clearScreen();
+                    System.out.println("Anda memilih Chicken nuggets So good Premium");
+                    judul = "Chicken nuggets So good Premium";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 60.000 \n" + 
+                                        "2. Sedang Rp 50.000 \n" + 
+                                        "3. Kecil Rp 40.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+      
+                        if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 60000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 50000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 40000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+            }else if(pilihan == 12 || pilihan == 21) {
+                do{ 
+                    clearScreen();
+                    System.out.println("Pilihan menu pertama :");
+                    System.out.println("Anda memilih Chicken nuggets So good");
+                    judul = "Chicken nuggets So good";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 30.000 \n" + 
+                                        "2. Sedang Rp 25.000 \n" + 
+                                        "3. Kecil Rp 20.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+      
+                        if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 30000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 25000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 20000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+
+                do{ 
+                    clearScreen();
+                    System.out.println("Pilihan menu kedua :");
+                    System.out.println("Anda memilih Otak-otak Fiesta");
+                    judul2 = "Otak-otak Fiesta";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 25.000 \n" + 
+                                        "2. Sedang Rp 20.000 \n" + 
+                                        "3. Kecil Rp 18.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+      
+                        if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng2 = pilihan3;
+                        total2 = pilihan3 * 25000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total2);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng2 = pilihan3;
+                        total2 = pilihan3 * 20000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total2);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng2 = pilihan3;
+                        total2 = pilihan3 * 18000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total2);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+
+                jumlah = total + total2;
+                NumberFormat nf = NumberFormat.getNumberInstance();
+                totalFormatted = nf.format(jumlah);
+            }else if(pilihan == 13 || pilihan == 31) {
+                do{ 
+                    clearScreen();
+                    System.out.println("Pilihan menu pertama :");
+                    System.out.println("Anda memilih Chicken nuggets So good");
+                    judul = "Chicken nuggets So good";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 30.000 \n" + 
+                                        "2. Sedang Rp 25.000 \n" + 
+                                        "3. Kecil Rp 20.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+      
+                        if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 30000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 25000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 20000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+
+                do{ 
+                    clearScreen();
+                    System.out.println("Pilihan menu kedua :");
+                    System.out.println("Anda memilih Bakso indofood");
+                    judul2 = "Bakso indofood";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 20.000 \n" + 
+                                        "2. Sedang Rp 15.000 \n" + 
+                                        "3. Kecil Rp 10.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+      
+                        if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng2 = pilihan3;
+                        total2 = pilihan3 * 20000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total2);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng2 = pilihan3;
+                        total2 = pilihan3 * 15000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total2);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng2 = pilihan3;
+                        total2 = pilihan3 * 10000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total2);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+
+                jumlah = total + total2;
+                NumberFormat nf = NumberFormat.getNumberInstance();
+                totalFormatted = nf.format(jumlah);
+                }else if(pilihan == 23 || pilihan == 32) {
+                do{ 
+                    clearScreen();
+                    System.out.println("Pilihan menu pertama :");
+                    System.out.println("Anda memilih Otak otak Fiesta");
+                    judul = "Otak-otak Fiesta";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 25.000 \n" + 
+                                        "2. Sedang Rp 20.000 \n" + 
+                                        "3. Kecil Rp 18.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+      
+                        if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 25000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 20000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 18000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+
+                do{ 
+                    clearScreen();
+                    System.out.println("Pilihan menu kedua :");
+                    System.out.println("Anda memilih Bakso indofood");
+                    judul2 = "Bakso indofood";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 20.000 \n" + 
+                                        "2. Sedang Rp 15.000 \n" + 
+                                        "3. Kecil Rp 10.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+      
+                        if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng2 = pilihan3;
+                        total2 = pilihan3 * 20000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total2);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng2 = pilihan3;
+                        total2 = pilihan3 * 15000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total2);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng2 = pilihan3;
+                        total2 = pilihan3 * 10000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total2);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+
+                jumlah = total + total2;
+                NumberFormat nf = NumberFormat.getNumberInstance();
+                totalFormatted = nf.format(jumlah);
+            }else if(pilihan == 22) {
+                do{ 
+                    clearScreen();
+                    System.out.println("Anda memilih Otak-otak Fiesta Premium");
+                    judul = "Otak-otak Fiesta Premium";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 50.000 \n" + 
+                                        "2. Sedang Rp 40.000 \n" + 
+                                        "3. Kecil Rp 36.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+      
+                        if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 50000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 40000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 36000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+            }else if(pilihan == 33) {
+                do{ 
+                    clearScreen();
+                    System.out.println("Anda memilih Bakso indofood Premium");
+                    judul = "Bakso indofood Premium";
+                    System.out.println("Pilih varian ukuran : \n" + 
+                                        "1. Besar Rp 40.000 \n" + 
+                                        "2. Sedang Rp 20.000 \n" + 
+                                        "3. Kecil Rp 18.000 \n");
+                    System.out.print("Masukan pilihan Ukuran anda : ");
+                    while(!hasil.hasNextInt()) {
+                        System.out.print("Pilihan yang anda masukan bukan angka !, Masukan kembali pilihan : ");
+                        hasil.next();
+                    }
+                    pilihan2 = hasil.nextInt();
+    
+                    if(pilihan2 == 1) {
+                        System.out.println("Pilihan anda adalah ukuran Besar");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 25000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 2) {
+                        System.out.println("Pilihan anda adalah ukuran Sedang");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 20000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else if(pilihan2 == 3) {
+                        System.out.println("Pilihan anda adalah ukuran Kecil");
+    
+                        System.out.print("Masukan jumlah Pesanan Anda! :");
+                        pilihan3 = hasil.nextInt();
+                        jumlahbrng = pilihan3;
+                        total = pilihan3 * 18000;
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        totalFormatted = nf.format(total);
+                        System.out.println("Total Harga yang anda bayarkan adalah : " + totalFormatted);
+                    }else{
+                        System.out.println("Pilihan Ukuran anda tidak tersedia !");
+                    }
+                    
+                    
+                    System.out.print("Apakah anda ingin memilih ukuran kembali? (y/n) ");
+                    ulang2 = hasil.next();
+                } while(ulang2.equalsIgnoreCase("y"));
+            }else{
+                System.out.println("Pilihan yang anda masukan tidak tersedia di dalam menu");
+            }
+
+            System.out.print("Apakah anda ingin memilih Menu lagi? (y/n) ");
+            ulang = hasil.next();
+        }while(ulang.equalsIgnoreCase("y"));
+        clearScreen();
+        System.out.println("                            STRUK PEMBELIAN                         \n" +
+                           "=================================================================== \n" +
+                           "||  Items                     ||  Jumlah barang   || Total Harga || \n" +
+                           "=================================================================== \n"+
+                           "||"+judul+" => "+jumlahbrng+ " <=> "+total+"    \n" + 
+                           "||"+judul2+" => "+jumlahbrng2+" <=> "+total2+"  \n" +
+                           "=================================================================== \n" +
+                           "Total harga =                      "+totalFormatted+"\n" +
+                           "=================================================================== \n");
+        System.out.println("Terimakasih telah berbelanja di aplikasi ini !");
+        hasil.close();
+    }
+
+    public static void clearScreen() throws IOException, InterruptedException {
+        if (System.getProperty("os.name").contains("Windows")) {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } else {
+            Runtime.getRuntime().exec("clear");
+        }
+    }
+}
+    </textarea>
+
+	<h3>ouput<br>klik gambar untuk full screen</h3>
+
+	<ul class="gallery">
+		<li>
+			<h4>1.) langkah pertama compile source code java dengan terminal bawaan(CMD, git-bash, power-shell atau yang lainnya). Bisa juga menggunakan IDE netbeans!</h4>
+			<a href="#gambar-1">
+			<img src="img/compile-java.png"alt="compile-java">
+			<span></span>
+			</a>
+			<div class="overlay"id="gambar-1">
+			<a href="#" class="close">x close</a>
+			<img src="img/compile-java.png"alt="compile-java">
+			</div>
+		</li>
+
+		<li>
+		    <h4>2.) langkah kedua run atau jalankan programnya dengan mengetikan sintaks java Main.java untuk menggunakan terminal, untuk IDE netbeans tinggal klik gambar run di bagian headbar <br>
+				untuk menjalankannya ikuti cara berikut ini :</h4>
+		    <a href="#gambar-2">
+		    <img src="img/Run.png"alt="Run">
+		    <span></span>
+		    </a>
+		    <div class="overlay"id="gambar-2">
+		    <a href="#" class="close">x close</a>
+		    <img src="img/Run.png"alt="Run">
+		    </div>
+		</li>
+
+		<li>
+			<h4>3.) Berikut tampilan program ketika di jalankan, pada kasus ini saya memilih 12. chicken nuggets So good dan Otak-otak Fiesta</h4>
+		    <a href="#gambar-3">
+		    <img src="img/Run2.png"alt="Run2">
+		    <span></span>
+		    </a>
+		    <div class="overlay"id="gambar-3">
+		    <a href="#" class="close">x close</a>
+		    <img src="img/Run2.png"alt="Run2">
+		    </div>
+		</li>
+		<li>
+			<h4>4.) berikut setelah masuk ke pemilihan akan di arahkan untuk ke bagian harga yang berbeda di setiap ukuran, setelah memiliih chiken nuggets So good dan Otak-otak Fiesta <br>
+            akan di tampilkan struk pembelian :</h4>
+		    <a href="#gambar-4">
+		    <img src="img/Run3.png"alt="Run3">
+		    <span></span>
+		    </a>
+		    <div class="overlay"id="gambar-4">
+		    <a href="#" class="close">x close</a>
+		    <img src="img/Run3.png"alt="Run3">
+		    </div>
+		</li>
+		<li>
+		    <a href="#gambar-5">
+		    <img src="img/Run4.png"alt="Run4">
+		    <span></span>
+		    </a>
+		    <div class="overlay"id="gambar-5">
+		    <a href="#" class="close">x close</a>
+		    <img src="img/Run4.png"alt="Run4">
+		    </div>
+		</li>
+		<li>
+		    <a href="#gambar-6">
+		    <img src="img/Run5.png"alt="Run5">
+		    <span></span>
+		    </a>
+		    <div class="overlay"id="gambar-6">
+		    <a href="#" class="close">x close</a>
+		    <img src="img/Run5.png"alt="Run5">
+		    </div>
+		</li>
+		<li>
+            <h4>5. Berikut adalah program ketika di masukan angka di luar dari ketentuan, dan jika user memasukan huruf abjad</h4>
+		    <a href="#gambar-7">
+		    <img src="img/Run6.png"alt="Run6">
+		    <span></span>
+		    </a>
+		    <div class="overlay"id="gambar-7">
+		    <a href="#" class="close">x close</a>
+		    <img src="img/Run6.png"alt="Run6">
+		    </div>
+		</li>
+        <li>
+		    <a href="#gambar-8">
+		    <img src="img/Run7.png"alt="Run7">
+		    <span></span>
+		    </a>
+		    <div class="overlay"id="gambar-8">
+		    <a href="#" class="close">x close</a>
+		    <img src="img/Run7.png"alt="Run7">
+		    </div>
+		</li>
+        <li>
+		    <a href="#gambar-9">
+		    <img src="img/Run8.png"alt="Run8">
+		    <span></span>
+		    </a>
+		    <div class="overlay"id="gambar-9">
+		    <a href="#" class="close">x close</a>
+		    <img src="img/Run8.png"alt="Run8">
+		    </div>
+		</li>
+
+		<div class="clear"></div>
+	</ul>
+</body>
+</html>
